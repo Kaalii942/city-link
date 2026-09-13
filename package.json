@@ -1,0 +1,26 @@
+{
+  "name": "eipms-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:backend": "npm run dev --workspace=apps/backend",
+    "dev:frontend": "npm run dev --workspace=apps/frontend",
+    "dev:desktop": "npm run start --workspace=apps/desktop",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:all": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\" \"npm run dev:desktop\"",
+    "build:packages": "npm run build --workspaces --if-present",
+    "build:installer": "npm run build:packages && npm run dist --workspace=apps/desktop",
+    "db:migrate": "npm run db:migrate --workspace=packages/database",
+    "db:seed": "npm run db:seed --workspace=packages/database",
+    "db:setup": "docker-compose up -d && npm run db:migrate && npm run db:seed"
+  },
+  "devDependencies": {
+    "7zip-bin": "^5.2.0",
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.3"
+  }
+}

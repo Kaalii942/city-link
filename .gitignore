@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build and Distributables
+dist/
+build/
+release/
+*.tgz
+*.tar.gz
+
+# Local Environment & Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Databases & Backups
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+dev.db
+backups/
+C:\EIPMS_Backups
+
+# Uploads & User Media
+uploads/
+d:\City links\uploads
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS & IDE Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+scratch/
+.tmp/
+temp/
