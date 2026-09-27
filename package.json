@@ -21,7 +21,8 @@
     "db:seed": "npm run db:seed --workspace=packages/database",
     "db:setup": "docker-compose up -d && npm run db:migrate && npm run db:seed"
   },
-  "devDependencies": {
+  "dependencies": {
+    "@types/node": "^20.11.0",
     "7zip-bin": "^5.2.0",
     "concurrently": "^8.2.2",
     "typescript": "^5.3.3"
